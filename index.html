@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customize Mac</title>
+    <title>iMac 24-inch Blue</title>
     <!-- bootstrap stylesheet -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -16,7 +16,7 @@
 <body>
     <header></header>
     <main>
-        <section class="mx-5 p-5">
+        <section class="mx-5 px-2 py-5">
             <div class="container-fluid">
                 <div class="row mx-5">
                     <div class="col">
@@ -26,85 +26,92 @@
                         <!-- top part  -->
                         <div class="heading-part mb-3">
                             <h2>Customize your Blue 24-inch iMac with Apple M1 chip.</h2>
-                            <p>Say hello to the new iMac.
-                                Inspired by the best of Apple. Transformed by the M1 chip. This extraordinary design is
-                                only possible thanks to M1, the first system on a chip for Mac. It makes iMac so thin
-                                and compact that it fits in more places than ever.</p>
+                            <p>Say hello to the new iMac. Apple M1 chip with 8-core CPU with 4 performance cores and 4
+                                efficiency cores, 7-core GPU, and 16-core Neural Engine, 8GB unified memory, 256GB SSD
+                                storage, Two Thunderbolt / USB 4 ports, Gigabit Ethernet, Magic Mouse, Magic Keyboard.
+                            </p>
                         </div>
                         <!-- memory  -->
                         <div class="memory mb-4">
                             <h6>Memory</h6>
-                            <button id="btn-memory-8gb" class="btn btn-sm btn-light btn-outline-secondary">8GB unified
+                            <button id="btn-memory-8gb" class="btn btn-sm btn-light btn-outline-secondary me-2 mb-1">8GB
+                                unified
                                 memory</button>
-                            <button id="btn-memory-16gb" class="btn btn-sm btn-light btn-outline-secondary">16GB unified
+                            <button id="btn-memory-16gb"
+                                class="btn btn-sm btn-light btn-outline-secondary me-2 mb-1">16GB unified
                                 memory</button>
                         </div>
                         <!-- storage  -->
                         <div class="storage mb-4">
                             <h6>Storage</h6>
-                            <button id="btn-storage-256gb" class="btn btn-sm btn-light btn-outline-secondary">256GB SSD
+                            <button id="btn-storage-256gb"
+                                class="btn btn-sm btn-light btn-outline-secondary me-2 mb-1">256GB SSD
                                 Storage</button>
-                            <button id="btn-storage-512gb" class="btn btn-sm btn-light btn-outline-secondary">512GB SSD
+                            <button id="btn-storage-512gb"
+                                class="btn btn-sm btn-light btn-outline-secondary me-2 mb-1">512GB SSD
                                 Storage</button>
-                            <button id="btn-storage-1tb" class="btn btn-sm btn-light btn-outline-secondary">1TB SSD
+                            <button id="btn-storage-1tb"
+                                class="btn btn-sm btn-light btn-outline-secondary me-2 mb-1">1TB SSD
                                 Storage</button>
                         </div>
                         <!-- delivery charge  -->
                         <div class="delivery-option mb-4">
                             <h6>Choose your delivery option</h6>
-                            <button id="btn-prime-delivery" class="btn btn-sm btn-light btn-outline-secondary">Friday,
+                            <button id="btn-prime-delivery"
+                                class="btn btn-sm btn-light btn-outline-secondary me-2 mb-1">Friday,
                                 Aug 25 FREE Prime Delivery</button>
-                            <button id="btn-delivery-charge" class="btn btn-sm btn-light btn-outline-secondary">Friday,
+                            <button id="btn-delivery-charge"
+                                class="btn btn-sm btn-light btn-outline-secondary me-2 mb-1">Friday,
                                 Aug 21 Delivery charge $20</button>
                         </div>
                         <!-- mac cost calculation  -->
-                        <div class="calculation mt-5 col-md-6">
+                        <div class="calculation mt-5 col-6">
                             <!-- best price -->
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-8">
                                     <h6>Best Price</h6>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-4">
                                     <h6>$<span id="best-price">1299</span></h6>
                                 </div>
                             </div>
-                            <hr class="m-0 p-0">
+                            <hr class="my-1 p-0">
                             <!-- extra memory cost -->
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-8">
                                     <h6>Extra Memory Cost</h6>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-4">
                                     <h6>$<span id="extra-memory-cost">0</span></h6>
                                 </div>
                             </div>
-                            <hr class="m-0 p-0">
+                            <hr class="my-1 p-0">
                             <!-- extra storage cost -->
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-8">
                                     <h6>Extra Storage Cost</h6>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-4">
                                     <h6>$<span id="extra-storage-cost">0</span></h6>
                                 </div>
                             </div>
-                            <hr class="m-0 p-0">
+                            <hr class="my-1 p-0">
                             <!-- delivery charge -->
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-8">
                                     <h6>Delivery Charge</h6>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-4">
                                     <h6>$<span id="delivery-charge">0</span></h6>
                                 </div>
                             </div>
-                            <hr class="m-0 p-0">
+                            <hr class="my-1 p-0 border border-dark border-2">
                             <!-- total price -->
                             <div class="row">
-                                <div class="col-md-8">
+                                <div class="col-8">
                                     <h6>Total Price</h6>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-4">
                                     <h6>$<span id="total-price">1299</span></h6>
                                 </div>
                             </div>
@@ -112,9 +119,10 @@
                         <!-- apply promo  -->
                         <h6 class="mt-4">Apply Promo Code</h6>
                         <div>
-                            <input id="promo-code" type="text" placeholder="Enter promo code">
+                            <input id="promo-code" class="me-2 mb-2 rounded-2 border border-1 border-secondary"
+                                type="text" placeholder="Enter promo code">
                             <button id="btn-promo-apply"
-                                class="btn-danger px-4 rounded border border-3 border-danger text-white">Apply</button>
+                                class="btn-danger px-4 rounded border border-3 border-danger text-white me-2 mb-2">Apply</button>
                         </div>
                     </div>
                 </div>

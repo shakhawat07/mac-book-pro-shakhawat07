@@ -1,6 +1,7 @@
+/* customize style  */
 img{
     width: 90%;
-    /* height: 300px; s */
-    /* margin-left: 6rem ;
-    margin-top: 0.5rem; */
+}
+h2, h6{
+    font-weight:700;
 }
