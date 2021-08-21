@@ -1,93 +1,91 @@
-function memoryCostField(amount) {
+// --------------------------------functions--------------------------------
+// update each cost field
+function costField(costFieldId, amount) {
+    const costField = document.getElementById(costFieldId);
+    costField.innerText = amount;
+};
+// getting each float amount 
+function cost(costId) {
+    const costField = document.getElementById(costId);
+    const costFieldText = costField.innerText;
+    const cost = parseFloat(costFieldText);
+    return cost;
+};
+// calculate and update total price 
+function updateTotalPriceField() {
+    // getting each amount
     // debugger;
-    console.log(amount);
-    const memoryCostField = document.getElementById('extra-memory-cost');
-    const memoryCostText = memoryCostField.innerText;
-    // const memoryCost = parseFloat(memoryCostText);
-    memoryCostField.innerText = amount;
-    return amount;
+    const bestPrice = cost('best-price');
+    const memoryCost = cost('extra-memory-cost');
+    const storageCost = cost('extra-storage-cost');
+    const deliveryCost = cost('delivery-charge');
+    // total cost calculation 
+    var totalCost = bestPrice + memoryCost + storageCost + deliveryCost;
+    // update total price field 
+    costField('total-price', totalCost);
+    costField('discount-total', totalCost);
+};
+function promoCode(promoCodeId, totalPrice) {
+    // debugger;
+    const promoCodeField = document.getElementById(promoCodeId);
+    const promoCodeText = promoCodeField.value;
+    // checking promo code 
+    if (promoCodeText == 'stevekaku') {
+        var discountPrice = (totalPrice * 0.80);
+    }
+    else {
+        var discountPrice = totalPrice;
+    }
+    // update discount price field 
+    costField('discount-total', discountPrice);
+    // clear input field
+    promoCodeField.value = '';
 };
 
-function storageCostField(amount) {
-    const storageCostField = document.getElementById('extra-storage-cost');
-    const storageCostText = storageCostField.innerText;
-    const storageCost = parseFloat(storageCostText);
-    storageCostField.innerText = amount;
-    return amount;
-}
-function deliveryOptionField(amount) {
-    const deliveryOptionField = document.getElementById('delivery-charge');
-    const deliveryOptionText = deliveryOptionField.innerText;
-    const deliveryOptionCost = parseFloat(deliveryOptionText);
-    deliveryOptionField.innerText = amount;
-}
-
-function bestPriceField() {
-    const bestPriceField = document.getElementById('best-price');
-    const bestPriceText = bestPriceField.innerText;
-    const bestPrice = parseFloat(bestPriceText);
-    return bestPrice;
-}
-
-
-function updateTotalPriceField(newMemoryCost) {
-    // debugger;
-    const totalPriceField = document.getElementById('total-price');
-    const totalPriceText = totalPriceField.innerText;
-    const previousTotalPrice = parseFloat(totalPriceText);
-
-    const bestPrice = bestPriceField();
-
-    const memoryCost = parseFloat(newMemoryCost);
-    if (memoryCost == 0) {
-        const finalTotalPrice = bestPrice + 0;
-        totalPriceField.innerText = finalTotalPrice;
-    }
-    else if (memoryCost == 180) {
-        const finalTotalPrice = bestPrice + 180;
-        totalPriceField.innerText = finalTotalPrice;
-    }
-};
-
-
-// memory
+//--------------------------------event handler--------------------------------
+//--------------------------------memory--------------------------------
 // handle memory 8gb event handler
 document.getElementById('btn-memory-8gb').addEventListener('click', function () {
-    const newMemoryCost = memoryCostField(0);
-    updateTotalPriceField(newMemoryCost);
+    costField('extra-memory-cost', 0);
+    updateTotalPriceField();
 
 });
 // handle memory 16gb event handler
 document.getElementById('btn-memory-16gb').addEventListener('click', function () {
-    const newMemoryCost = memoryCostField(180);
-    updateTotalPriceField(newMemoryCost);
+    costField('extra-memory-cost', 180);
+    updateTotalPriceField();
 });
 
-// storage 
+//--------------------------------storage--------------------------------
 // handle storage 256gb event handler
 document.getElementById('btn-storage-256gb').addEventListener('click', function () {
-    const newStorageCost = storageCostField(0);
-    // updateTotalPriceField(newStorageCost);
+    costField('extra-storage-cost', 0);
+    updateTotalPriceField();
 });
 // handle storage 512gb event handler
 document.getElementById('btn-storage-512gb').addEventListener('click', function () {
-    const newStorageCost = storageCostField(100);
-    // updateTotalPriceField(newStorageCost);
+    costField('extra-storage-cost', 100);
+    updateTotalPriceField();
 });
 // handle storage 1tb event handler
 document.getElementById('btn-storage-1tb').addEventListener('click', function () {
-    const newStorageCost = storageCostField(180);
-    // updateTotalPriceField(newStorageCost);
+    costField('extra-storage-cost', 180);
+    updateTotalPriceField();
 });
-
-// delivery option 
+//--------------------------------delivery option-------------------------------- 
 // handle free prime delivery event handler
 document.getElementById('btn-prime-delivery').addEventListener('click', function () {
-    const newDeliveryCost = deliveryOptionField(0);
-    // updateTotalPriceField(newStorageCost);
+    costField('delivery-charge', 0);
+    updateTotalPriceField()
 });
 // handle delivery charge $20 event handler
 document.getElementById('btn-delivery-charge').addEventListener('click', function () {
-    const newDeliveryCost = deliveryOptionField(20);
-    // updateTotalPriceField(newStorageCost);
+    costField('delivery-charge', 20);
+    updateTotalPriceField();
+});
+//--------------------------------discount--------------------------------
+// handle discount event handler
+document.getElementById('btn-promo-apply').addEventListener('click', function () {
+    const totalPrice = cost('total-price');
+    promoCode('promo-code', totalPrice);
 });
